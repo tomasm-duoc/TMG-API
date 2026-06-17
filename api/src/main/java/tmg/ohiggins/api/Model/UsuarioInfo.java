@@ -24,10 +24,10 @@ public class UsuarioInfo {
     private String nombre;
 
     @NotBlank
-    private String appaterno;
+    private String apPaterno;
     
     @NotBlank
-    private String apmaterno;
+    private String apMaterno;
 
     @NotBlank
     private String rut;
