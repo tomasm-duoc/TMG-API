@@ -37,8 +37,4 @@ public class Curso {
     @Size(max = 500, message= "La descripcion no puede superar los 500 caracteres")
     @Column(length  = 500)
     private String descripcion;
-
-    //relacion con secciones
-    @OneToMany(mappedBy = "curso", cascade = cascadeType.ALL, orphanRemoval = true)
-    @ToString
 }
