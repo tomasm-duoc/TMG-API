@@ -9,29 +9,20 @@ import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "usuarios_info")
-public class UsuarioInfo {
+@Table(name = "Roles")
+public class Rol {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer idUsuario;
+    private Integer idRol;
 
     @NotBlank
-    private String nombre;
+    private String rol_nombre;
 
-    @NotBlank
-    private String apPaterno;
-    
-    @NotBlank
-    private String apMaterno;
-
-    @NotBlank
-    private String rut;
-    
-    @NotBlank
-    private Integer edad;
+    private List<Usuario> Usuarios;
 }
