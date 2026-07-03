@@ -1,18 +1,26 @@
 package tmg.ohiggins.api.Model;
 
 
-import java.sql.Date;
+import java.time.LocalDate;
 import java.time.LocalTime;
 
+import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import lombok.NonNull;
-@Table(name = "anotaciones")
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "anotaciones")
 public class Anotacion {
 
     @Id
@@ -22,17 +30,16 @@ public class Anotacion {
     @NotNull(message = "El curso es obligatorio")
     private Integer idCurso;
 
-    @NotBlank
-    private String Tipo_de_registro;
+    @NotBlank(message = "El tipo de registro es obligatorio")
+    private String TipoRegistro;
 
-    @NonNull
-    private Date fecha;
+     @NotNull(message = "La fecha es obligatoria")
+    private LocalDate fecha;
 
-    @NonNull
+     @NotNull(message = "La hora es obligatoria")
     private LocalTime hora;
 
-    @NotBlank
+    @NotBlank(message = "La descripcion es obligatoria")
     private String descripcion;
 
-    
 }
