@@ -33,7 +33,7 @@ public class AnotacionService {
     public Anotacion updateAnotacion(Integer id, Anotacion anotacion) {
         Anotacion existingAnotacion = anotacionRepository.findById(id).orElse(null);
         if (existingAnotacion != null) {
-            existingAnotacion.setIdCurso(anotacion.getIdCurso());
+            existingAnotacion.setRol(anotacion.getRol());
             existingAnotacion.setTipoRegistro(anotacion.getTipoRegistro());
             existingAnotacion.setDescripcion(anotacion.getDescripcion());
             return anotacionRepository.save(existingAnotacion);

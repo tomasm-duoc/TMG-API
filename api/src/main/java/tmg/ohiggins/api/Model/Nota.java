@@ -1,9 +1,13 @@
 package tmg.ohiggins.api.Model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
@@ -19,11 +23,15 @@ public class Nota {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idNota;
 
-    @NotNull
-    private Integer idEstudiante;
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_rol", nullable = false)
+    @NotNull(message = "El rol es obligatorio")
+    private Rol rol; 
 
-    @NotNull
-    private Integer idAsignatura;
+    @ManyToOne(optional = false, fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_curso", nullable = false)
+    @NotNull(message = "El curso es obligatorio")
+    private Curso curso; 
 
     @NotNull
     private float nota;

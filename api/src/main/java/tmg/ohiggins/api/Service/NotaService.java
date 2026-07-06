@@ -29,8 +29,8 @@ public class NotaService {
     public Nota updateNota(Integer id, Nota nota) {
         Nota existingNota = notaRepository.findById(id).orElse(null);
         if (existingNota != null) {
-            existingNota.setIdAsignatura(nota.getIdAsignatura());
-            existingNota.setIdEstudiante(nota.getIdEstudiante());
+            existingNota.setCurso(nota.getCurso());
+            existingNota.setRol(nota.getRol());
             existingNota.setNota(nota.getNota());
             existingNota.setObservaciones(nota.getObservaciones());
             return notaRepository.save(existingNota);
