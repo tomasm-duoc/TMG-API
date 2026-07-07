@@ -4,6 +4,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.NotBlank;
 import lombok.AllArgsConstructor;
@@ -24,5 +25,6 @@ public class Rol {
     @NotBlank
     private String rol_nombre;
 
-    private List<Usuario> Usuarios;
+    @OneToMany(mappedBy = "rol", fetch = jakarta.persistence.FetchType.LAZY)
+    private List<Usuario> usuarios;
 }
