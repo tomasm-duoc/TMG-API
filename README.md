@@ -18,6 +18,7 @@ Antes de ejecutar el proyecto, instala y configura:
 - Java 21
 - MySQL Server
 - MySQL Workbench
+    - [Link instalador MySQL](https://dev.mysql.com/downloads/windows/installer/8.0.html)
 - Maven, o usa el Maven Wrapper incluido en el proyecto
 
 Se recomienda usar MySQL Workbench junto con MySQL Server para administrar la base de datos local, revisar tablas, ejecutar consultas y validar que la conexion este funcionando correctamente.
