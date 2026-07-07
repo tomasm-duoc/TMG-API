@@ -12,38 +12,38 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import tmg.ohiggins.api.Model.Usuario;
-import tmg.ohiggins.api.Service.UsuarioService;
+import tmg.ohiggins.api.Model.Rol;
+import tmg.ohiggins.api.Service.RolService;
 
 @RestController
-@RequestMapping("/usuarios")
-public class UsuarioController {
+@RequestMapping("/roles")
+public class RolController {
 
     @Autowired
-    private UsuarioService usuarioService;
+    private RolService rolService;
 
     @GetMapping
-    public List<Usuario> getAllUsuarios() {
-        return usuarioService.getAllUsuarios();
+    public List<Rol> getAllRoles() {
+        return rolService.getAllRoles();
     }
 
     @GetMapping("/{id}")
-    public Usuario getUsuarioById(@PathVariable Integer id) {
-        return usuarioService.getUsuarioById(id);
+    public Rol getRolById(@PathVariable Integer id) {
+        return rolService.getRolById(id);
     }
 
     @PostMapping
-    public Usuario saveUsuario(@RequestBody Usuario usuario) {
-        return usuarioService.saveUsuario(usuario);
+    public Rol saveRol(@RequestBody Rol rol) {
+        return rolService.saveRol(rol);
     }
 
     @PutMapping("/{id}")
-    public Usuario updateUsuario(@PathVariable Integer id, @RequestBody Usuario usuario) {
-        return usuarioService.updateUsuario(id, usuario);
+    public Rol updateRol(@PathVariable Integer id, @RequestBody Rol rol) {
+        return rolService.updateRol(id, rol);
     }
 
     @DeleteMapping("/{id}")
-    public String deleteUsuario(@PathVariable Integer id) {
-        return usuarioService.deleteUsuario(id);
+    public String deleteRol(@PathVariable Integer id) {
+        return rolService.deleteRol(id);
     }
 }

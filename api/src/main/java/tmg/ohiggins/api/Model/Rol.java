@@ -12,6 +12,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,6 +27,7 @@ public class Rol {
     @NotBlank
     private String rol_nombre;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "rol", fetch = jakarta.persistence.FetchType.LAZY)
     private List<Usuario> usuarios;
 }
